@@ -1,0 +1,14 @@
+epochs: 20
+batch_size: 128
+lr: 1.0e-4
+weight_decay: 0.01
+grad_accum_steps: 1
+max_grad_norm: 1.0
+use_amp: true
+use_dataparallel: true
+num_workers: 4
+T_0: 4940
+T_mult: 2
+eta_min: 1.0e-6
+log_interval: 50
+min_batch_size_warning: 128

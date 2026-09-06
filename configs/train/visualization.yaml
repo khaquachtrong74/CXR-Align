@@ -1,0 +1,21 @@
+enable_visualization: true
+use_tensorboard: true
+retrieval_every_n_epochs: 5
+embedding_every_n_epochs: 10
+heatmap_every_n_epochs: 5
+gpu_log_every_n_steps: 100
+label_names: 
+  - "Atelectasis"
+  - "Cardiomegaly"
+  - "Consolidation"
+  - "Edema"
+  - "Enlarged Cardiomediastinum"
+  - "Fracture"
+  - "Lung Lesion"
+  - "Lung Opacity"
+  - "No Finding"
+  - "Pleural Effusion"
+  - "Pleural Other"
+  - "Pneumonia"
+  - "Pneumothorax"
+  - "Support Devices"

@@ -1,0 +1,4 @@
+data_root: "/kaggle/input/datasets/nghiaquchtrng/medalign"
+image_root: "/kaggle/input/datasets/simhadrisadaram/mimic-cxr-dataset/official_data_iccv_final"
+metadata_file: "/kaggle/input/datasets/nghiaquchtrng/medalign/metadata/version-with-views/mimic_cxr_clean_studies_with_views.csv"
+splits_dir: "splits"

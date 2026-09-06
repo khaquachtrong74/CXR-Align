@@ -1,0 +1,22 @@
+defaults:
+  - model/image_encoder
+  - model/text_encoder
+  - model/projection
+  - model/pooling
+  - model/loss
+  - data/cache
+  - data/paths_kaggle
+  - data/precompute
+  - train/training
+  - train/logging
+  - train/visualization
+  - _self_
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}_${hydra.job.override_dirname}
+  job:
+    chdir: true

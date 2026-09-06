@@ -1,0 +1,3 @@
+log_dir: "/kaggle/working/logs/medalign-deep-projection-separate-temperature"
+checkpoint_dir: "/kaggle/working/checkpoints/medalign-deep-projection-separate-temperature"
+resume: null

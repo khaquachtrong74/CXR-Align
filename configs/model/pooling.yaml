@@ -1,0 +1,3 @@
+max_views_per_study: 2
+pool_hidden_dim: 128
+pool_dropout: 0.1

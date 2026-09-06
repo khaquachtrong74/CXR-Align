@@ -1,0 +1,7 @@
+model_name: "lukaskuhndkfz/ModelAuditor"
+checkpoint_filename: "chexpert_resnet50_1_224.pt"
+# checkpoint_path: "/kaggle/input/chexpert-resnet50/chexpert_resnet50_1_224.pt"  # No longer needed with torchxrayvision
+input_size: 224
+output_dim: 2048
+normalize_mean: [0.485, 0.456, 0.406]
+normalize_std: [0.229, 0.224, 0.225]

@@ -1,0 +1,29 @@
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments and editor settings
+.venv/
+venv/
+.env
+.idea/
+.vscode/
+
+# Large/generated data and experiment artifacts
+output/
+metadata/
+splits/
+*.h5
+*.hdf5
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.log
+
+# Operating-system files
+.DS_Store

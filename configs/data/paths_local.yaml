@@ -1,0 +1,4 @@
+data_root: "/home/lossrunner/Documents/work/DoAN"
+image_root: "/home/lossrunner/Documents/work/DoAN/mimic-cxr-jpg/2.0.0/files"
+metadata_file: "/home/lossrunner/Documents/work/DoAN/metadata/version-with-views/mimic_cxr_clean_studies_with_views.csv"
+splits_dir: "splits"
