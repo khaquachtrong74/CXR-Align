@@ -44,9 +44,13 @@ clinical output, and nothing here should be used for diagnosis.
 
 Two design points worth naming:
 
-- **`h` vs `z` are separate.** `z` (contrastive head output) is only used by the loss;
-  retrieval is measured on `h`, the output of the modality-specific adapters. Training on `z`
-  and retrieving with `h` avoids the projection head's geometry leaking into the index.
+- **`h` vs `z` are separate.** `h` is the output of the modality-specific adapters; `z` is the
+  contrastive head output built on top of `h`. The loss is computed on `z`, so the projection
+  head's geometry does not have to be the retrieval geometry. ⚠️ **In the current code the
+  epoch-level retrieval logging still measures `z`, not `h`** (`_log_retrieval` in
+  `src/train.py`), while `configs/model/projection.yaml` states retrieval uses `h`. The config
+  comment and the implementation disagree — fix before quoting any retrieval number as
+  "retrieval performance".
 - **View attention pooling.** A study holds 1–2 views; a learned attention pool reduces them
   to one embedding per study, with masking so padded views never contribute.
 
@@ -152,9 +156,10 @@ result artifacts, no checkpoints, no logs.
 
 - **2D only.** No 3D CT/MRI.
 - **≤ 2 views per study** by construction; the pooling mask is built for this ceiling.
-- **Retrieval metrics run on a capped evaluation subset** by default — check the CLI defaults
-  before quoting any `R@k`. If the number of evaluated samples differs from the test split
-  size, say so next to the number.
+- **Retrieval metrics are computed on a hard-coded 1,000-sample cap**
+  (`max_samples = 1000` inside `_log_retrieval`), against a validation split of 15,778 studies.
+  Any `R@k` produced by training-time logging is therefore a **1,000-sample** number and must
+  be quoted with that qualifier attached. It also runs on `z`, not `h` (see above).
 - Reports are English; the encoders are English. No translation layer here.
 
 ## References
